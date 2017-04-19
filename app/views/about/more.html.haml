@@ -9,6 +9,11 @@
 
         - unless @instance_presenter.site_description.blank?
           %p= @instance_presenter.site_description.html_safe
+        - unless @instance_presenter.site_rules.blank?
+          %h3 参加ルール
+          %p= @instance_presenter.site_rules.html_safe
+        - unless @instance_presenter.site_extended_description.blank?
+          %p= @instance_presenter.site_extended_description.html_safe
 
       .information-board
         .section
@@ -24,8 +29,6 @@
           %strong= number_with_delimiter @instance_presenter.domain_count
           %span= t 'about.domain_count_after'
 
-      - unless @instance_presenter.site_extended_description.blank?
-        .panel= @instance_presenter.site_extended_description.html_safe
 
     .sidebar
       = render partial: 'contact', object: @instance_presenter
