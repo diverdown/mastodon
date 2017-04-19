@@ -26,6 +26,10 @@
       %td= best_in_place @settings['site_description'], :value, as: :textarea, url: admin_setting_path(@settings['site_description'])
     %tr
       %td
+        %strong 参加ルール
+      %td= best_in_place @settings['site_rules'], :value, as: :textarea, url: admin_setting_path(@settings['site_rules'])
+    %tr
+      %td
         %strong= t('admin.settings.site_description_extended.title')
         %p= t('admin.settings.site_description_extended.desc_html')
       %td= best_in_place @settings['site_extended_description'], :value, as: :textarea, url: admin_setting_path(@settings['site_extended_description'])
