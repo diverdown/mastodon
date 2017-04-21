@@ -63,6 +63,7 @@ gem 'browserify-rails'
 gem 'autoprefixer-rails'
 
 gem 'whenever', require: false
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rspec-rails'
