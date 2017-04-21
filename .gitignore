@@ -29,6 +29,7 @@ neo4j/
 
 # Ignore Capistrano customizations
 config/deploy/*
+config/schedule.rb
 
 # Ignore IDE files
 .vscode/
