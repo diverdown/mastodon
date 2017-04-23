@@ -124,7 +124,7 @@ const Header = React.createClass({
       lockedIcon = <i className='fa fa-lock' />;
     }
 
-    if (account.get('oauth_authorizations')) {
+    if (account.get('oauth_authorizations') && account.get('oauth_authorizations').length !== 0) {
       providers = (
         <ul className="authorized-oauth-providers">
           {account.get('oauth_authorizations').toJS().map(({url, name, provider}) => (

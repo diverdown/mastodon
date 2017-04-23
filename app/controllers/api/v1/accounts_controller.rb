@@ -4,7 +4,7 @@ class Api::V1::AccountsController < ApiController
   before_action -> { doorkeeper_authorize! :read }, except: [:follow, :unfollow, :block, :unblock, :mute, :unmute, :update_credentials]
   before_action -> { doorkeeper_authorize! :follow }, only: [:follow, :unfollow, :block, :unblock, :mute, :unmute]
   before_action -> { doorkeeper_authorize! :write }, only: [:update_credentials]
-  before_action :require_user!, except: [:show, :following, :followers, :statuses]
+  before_action :require_user!, except: [:show, :following, :followers, :statuses, :oauth_providers]
   before_action :set_account, except: [:verify_credentials, :update_credentials, :suggestions, :search]
 
   respond_to :json
@@ -46,6 +46,10 @@ class Api::V1::AccountsController < ApiController
     set_pagination_headers(next_path, prev_path)
 
     render :index
+  end
+
+  def oauth_authorizations
+    @oauth_authoriztions = @account.oauth_authorizations
   end
 
   def statuses
