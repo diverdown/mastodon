@@ -20,9 +20,7 @@ Rails.application.routes.draw do
 
   devise_for :users, path: 'auth', controllers: {
     sessions:           'auth/sessions',
-    registrations:      'auth/registrations',
-    passwords:          'auth/passwords',
-    confirmations:      'auth/confirmations',
+    omniauth_callbacks: 'users/omniauth_callbacks',
   }
 
   get '/users/:username', to: redirect('/@%{username}'), constraints: { format: :html }
@@ -84,7 +82,6 @@ Rails.application.routes.draw do
     end
 
     resources :accounts, only: [:index, :show] do
-      resource :reset, only: [:create]
       resource :silence, only: [:create, :destroy]
       resource :suspension, only: [:create, :destroy]
     end

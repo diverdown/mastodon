@@ -1,9 +1,6 @@
 require 'rails_helper'
-require 'devise_two_factor/spec_helpers'
 
 RSpec.describe User, type: :model do
-  it_behaves_like 'two_factor_backupable'
-
   describe 'validations' do
     it 'is invalid without an account' do
       user = Fabricate.build(:user, account: nil)
@@ -15,12 +12,6 @@ RSpec.describe User, type: :model do
       user = Fabricate.build(:user, locale: 'toto')
       user.valid?
       expect(user).to model_have_error_on_field(:locale)
-    end
-
-    it 'is invalid without a valid email' do
-      user = Fabricate.build(:user, email: 'john@')
-      user.valid?
-      expect(user).to model_have_error_on_field(:email)
     end
   end
 

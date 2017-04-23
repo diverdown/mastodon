@@ -15,6 +15,13 @@
     %small
       %span= "@#{account.username}"
       = fa_icon('lock') if account.locked?
+
+  %ul.authorized-oauth-providers
+    - @account.oauth_authorizations.each do |oa|
+      %li
+        = link_to oa.url, target: '_blank', rel: 'noopener noreferrer' do
+          = fa_icon oa.provider
+
   .details
     .bio
       .account__header__content.p-note.emojify= Formatter.instance.simplified_format(account)

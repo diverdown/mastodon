@@ -316,6 +316,7 @@
 .screenshot-with-signup {
   display: flex;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 
   .mascot {
     flex: 1 1 auto;
@@ -343,14 +344,6 @@
     .actions {
       margin-bottom: 0;
     }
-
-    .info {
-      text-align: center;
-
-      a {
-        color: $color2;
-      }
-    }
   }
 
   @media screen and (max-width: 625px) {
@@ -362,6 +355,14 @@
       flex: auto;
     }
   }
+
+  .info {
+    text-align: center;
+
+    a {
+      color: $color2;
+    }
+  }
 }
 
 .closed-registrations-message {
@@ -370,4 +371,24 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+ul.oauth-buttons {
+  margin: 0;
+  flex: 0 0 100%;
+  list-style: none;
+  > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    background-color: $color4;
+    .fa {
+      font-size: 1.8em;
+      margin-right: 8px;
+    }
+  }
 }

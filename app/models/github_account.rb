@@ -1,0 +1,2 @@
+class GithubAccount < OAuthAuthorization
+end

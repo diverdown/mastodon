@@ -24,9 +24,15 @@
   %h3 参加ルール
   %p= @instance_presenter.site_rules.html_safe
 
-  .screenshot-with-signup
-    .mascot= image_tag 'fluffy-elephant-friend.png'
+  - if flash[:notice]
+    .flash-message.notice
+      %strong= flash[:notice]
 
+  - if flash[:alert]
+    .flash-message.alert
+      %strong= flash[:alert]
+
+  .screenshot-with-signup
     - if @instance_presenter.open_registrations
       = render 'registration'
     - else
@@ -79,6 +85,8 @@
         %li
           = fa_icon('li check-square')
           = t 'about.features.api'
+
+  .mascot= image_tag 'fluffy-elephant-friend.png'
 
   .actions
     .info
