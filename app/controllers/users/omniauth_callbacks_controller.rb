@@ -34,7 +34,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       type: "#{auth.provider.camelcase}Account",
       uid: auth.uid,
       name: auth.info.nickname,
-      display_name: auth.name,
+      display_name: auth.name || '',
     }
   end
 end
