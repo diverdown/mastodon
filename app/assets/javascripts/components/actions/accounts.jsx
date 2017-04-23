@@ -73,6 +73,10 @@ export const FOLLOW_REQUEST_REJECT_REQUEST = 'FOLLOW_REQUEST_REJECT_REQUEST';
 export const FOLLOW_REQUEST_REJECT_SUCCESS = 'FOLLOW_REQUEST_REJECT_SUCCESS';
 export const FOLLOW_REQUEST_REJECT_FAIL    = 'FOLLOW_REQUEST_REJECT_FAIL';
 
+export const OAUTH_AUTHORIZATIONS_FETCH_REQUEST = 'OAUTH_AUTHORIZATIONS_FETCH_REQUEST';
+export const OAUTH_AUTHORIZATIONS_FETCH_SUCCESS = 'OAUTH_AUTHORIZATIONS_FETCH_SUCCESS';
+export const OAUTH_AUTHORIZATIONS_FETCH_FAIL    = 'OAUTH_AUTHORIZATIONS_FETCH_FAIL';
+
 export function fetchAccount(id) {
   return (dispatch, getState) => {
     dispatch(fetchRelationships([id]));
@@ -758,5 +762,47 @@ export function rejectFollowRequestFail(id, error) {
     type: FOLLOW_REQUEST_REJECT_FAIL,
     id,
     error
+  };
+};
+
+export function fetchOAuthAuthorizations(accountId) {
+  return (dispatch, getState) => {
+    const loadedOAuthAuthorizations = getState().getIn(['oauth_authorizations', accountId]);
+
+    if (loadedOAuthAuthorizations) {
+      return;
+    }
+
+    dispatch(fetchOAuthAuthorizationsRequest(accountId));
+
+    api(getState).get(`/api/v1/accounts/${accountId}/oauth_authorizations`).then(response => {
+      dispatch(fetchOAuthAuthorizationsSuccess(response.data));
+    }).catch(error => {
+      dispatch(fetchOAuthAuthorizationsFail(error));
+    });
+  };
+};
+
+export function fetchOAuthAuthorizationsRequest(id) {
+  return {
+    type: OAUTH_AUTHORIZATIONS_FETCH_REQUEST,
+    id,
+    skipLoading: true
+  };
+};
+
+export function fetchOAuthAuthorizationsSuccess(oauth_authorizations) {
+  return {
+    type: OAUTH_AUTHORIZATIONS_FETCH_SUCCESS,
+    oauth_authorizations,
+    skipLoading: true
+  };
+};
+
+export function fetchOAuthAuthorizationsFail(error) {
+  return {
+    type: OAUTH_AUTHORIZATIONS_FETCH_FAIL,
+    error,
+    skipLoading: true
   };
 };

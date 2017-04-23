@@ -160,6 +160,7 @@ Rails.application.routes.draw do
           get :statuses
           get :followers
           get :following
+          get :oauth_authorizations
 
           post :follow
           post :unfollow

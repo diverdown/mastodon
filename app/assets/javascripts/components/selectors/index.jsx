@@ -6,14 +6,14 @@ const getAccounts = state => state.get('accounts');
 
 const getAccountBase         = (state, id) => state.getIn(['accounts', id], null);
 const getAccountRelationship = (state, id) => state.getIn(['relationships', id], null);
-
+const getAccountOAuthAuthorizations = (state, id) => state.getIn(['oauth_authorizations', id], []);
 export const makeGetAccount = () => {
-  return createSelector([getAccountBase, getAccountRelationship], (base, relationship) => {
+  return createSelector([getAccountBase, getAccountRelationship, getAccountOAuthAuthorizations], (base, relationship, oauthAuthorizations) => {
     if (base === null) {
       return null;
     }
 
-    return base.set('relationship', relationship);
+    return base.set('relationship', relationship).set('oauth_authorizations', oauthAuthorizations);
   });
 };
 

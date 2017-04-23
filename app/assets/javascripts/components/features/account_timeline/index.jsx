@@ -4,7 +4,8 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import {
   fetchAccount,
   fetchAccountTimeline,
-  expandAccountTimeline
+  expandAccountTimeline,
+  fetchOAuthAuthorizations,
 } from '../../actions/accounts';
 import StatusList from '../../components/status_list';
 import LoadingIndicator from '../../components/loading_indicator';
@@ -35,12 +36,14 @@ const AccountTimeline = React.createClass({
 
   componentWillMount () {
     this.props.dispatch(fetchAccount(Number(this.props.params.accountId)));
+    this.props.dispatch(fetchOAuthAuthorizations(Number(this.props.params.accountId)));
     this.props.dispatch(fetchAccountTimeline(Number(this.props.params.accountId)));
   },
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.params.accountId !== this.props.params.accountId && nextProps.params.accountId) {
       this.props.dispatch(fetchAccount(Number(nextProps.params.accountId)));
+      this.props.dispatch(fetchOAuthAuthorizations(Number(nextProps.params.accountId)));
       this.props.dispatch(fetchAccountTimeline(Number(nextProps.params.accountId)));
     }
   },
