@@ -64,6 +64,7 @@ gem 'autoprefixer-rails'
 
 gem 'whenever', require: false
 gem 'newrelic_rpm'
+gem 'sentry-raven'
 
 group :development, :test do
   gem 'rspec-rails'
