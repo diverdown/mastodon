@@ -4,6 +4,7 @@ class User < ApplicationRecord
   include Settings::Extend
 
   devise(
+    :database_authenticatable,
     :trackable,
     :omniauthable,
     omniauth_providers: [
