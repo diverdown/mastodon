@@ -84,10 +84,9 @@ zh-HK:
       domain: 域名阻隔
       new:
         create: 新增域名阻隔
-        hint: 「域名阻隔」不會隔絕該域名用戶的文章進入本站資料庫，但會文章抵達後，自動套用特定的審批操作。
+        hint: "「域名阻隔」不會隔絕該域名用戶的文章進入本站資料庫，但會文章抵達後，自動套用特定的審批操作。"
         severity:
-          desc_html: 「<strong>自動靜音</strong>」令該域名用戶的文章，設為只對關注者顯示，沒有關注的人會看不到。
-            「<strong>自動刪除</strong>」會自動將該域名用戶的文章、媒體檔案、個人資料自本服務站刪除。
+          desc_html: "「<strong>自動靜音</strong>」令該域名用戶的文章，設為只對關注者顯示，沒有關注的人會看不到。 「<strong>自動刪除</strong>」會自動將該域名用戶的文章、媒體檔案、個人資料自本服務站刪除。"
           silence: 自動靜音
           suspend: 自動刪除
         title: 新增域名阻隔
@@ -126,8 +125,7 @@ zh-HK:
         username: 輸入用戶名稱
       registrations:
         closed_message:
-          desc_html: 當本站暫停接受註冊時，會顯示這個訊息。<br/>
-            可使用 HTML
+          desc_html: 當本站暫停接受註冊時，會顯示這個訊息。<br/> 可使用 HTML
           title: 暫停註冊訊息
         open:
           disabled: 停用
@@ -135,8 +133,7 @@ zh-HK:
           title: 開放註冊
       setting: 設定
       site_description:
-        desc_html: 在首頁顯示，及在 meta tag 使用作網站介紹。<br/>
-          你可以在此使用 <code>&lt;a&gt;</code> 和 <code>&lt;em&gt;</code>。
+        desc_html: 在首頁顯示，及在 meta tag 使用作網站介紹。<br/> 你可以在此使用 <code>&lt;a&gt;</code> 和 <code>&lt;em&gt;</code>。
         title: 本站介紹
       site_description_extended:
         desc_html: 本站詳細資訊頁的內文<br/>你可以在此使用 HTML
@@ -206,8 +203,7 @@ zh-HK:
       following: 你所關注的用戶名單
       muting: Muting list
     upload: 上載
-  landing_strip_html: <strong>%{name}</strong> 是一個在 <strong>%{domain}</strong> 的用戶。只要你有任何
-    Mastodon 服務站、或者聯盟網站的用戶，便可以跨站關注此站用戶，或者與他們互動。如果你沒有這類用戶，歡迎在<a href="%{sign_up_path}">此處登記</a>。
+  landing_strip_html: <strong>%{name}</strong> 是一個在 <strong>%{domain}</strong> 的用戶。只要你有任何 Mastodon 服務站、或者聯盟網站的用戶，便可以跨站關注此站用戶，或者與他們互動。如果你沒有這類用戶，歡迎在<a href="%{sign_up_path}">此處登記</a>。
   media_attachments:
     validations:
       images_and_video: 不能在已有圖片的文章上加入影片
@@ -275,11 +271,8 @@ zh-HK:
     description_html: 當你啟用<strong>雙重認證</strong>後，你登入時將需要使你手機、或其他種類認證器產生的代碼。
     disable: 停用
     enable: 啟用
-    enabled_success: 已成功啟用雙重認證
     instructions_html: "<strong>請用你手機的認證器應用程式（如 Google Authenticator、Authy），掃描這裏的QR 圖形碼</strong>。在雙重認證啟用後，你登入時將須要使用此應用程式產生的認證碼。"
     manual_instructions: 如果你無法掃描 QR 圖形碼，請手動輸入這個文字密碼︰
     setup: 設定
-    wrong_code: 你輸入的認證碼並不正確！可能伺服器時間和你手機不一致，請檢查你手機的時鐘，或與本站管理員聯絡。
   users:
     invalid_email: 電郵地址格式不正確
-    invalid_otp_token: 雙重認證確認碼不正確

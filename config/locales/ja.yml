@@ -105,8 +105,8 @@ ja:
       severity: 深刻度
       show:
         affected_accounts:
-          one: "データベース中の一つのアカウントに影響します"
-          other: "データベース中の%{count}個のアカウントに影響します"
+          one: データベース中の一つのアカウントに影響します
+          other: データベース中の%{count}個のアカウントに影響します
         retroactive:
           silence: このドメインからの存在するすべてのアカウントのサイレンスを戻す
           suspend: このドメインからの存在するすべてのアカウントの停止を戻す
@@ -297,15 +297,11 @@ ja:
     description_html: "<strong>二段階認証</strong>を有効にするとログイン時、電話でコードを受け取る必要があります。"
     disable: 無効
     enable: 有効
-    enabled_success: 二段階認証が有効になりました
     generate_recovery_codes: リカバリーコードを生成
     instructions_html: "<strong>Google Authenticatorか、もしくはほかのTOTPアプリでこのQRコードをスキャンしてください。</strong>これ以降、ログインするときはそのアプリで生成されるコードが必要になります。"
     lost_recovery_codes: リカバリーコードを使用すると携帯電話を紛失した場合でもアカウントにアクセスできるようになります。 リカバリーコードを紛失した場合もここで再生成することができますが、古いリカバリーコードは無効になります。
     manual_instructions: 'QRコードがスキャンできず、手動での登録を希望の場合はこのシークレットコードを利用してください。:'
-    recovery_codes_regenerated: リカバリーコードが再生成されました。
     recovery_instructions: 携帯電話を紛失した場合、以下の内どれかのリカバリーコードを使用してアカウントへアクセスすることができます。 リカバリーコードは印刷して安全に保管してください。
     setup: 初期設定
-    wrong_code: コードが間違っています。サーバー上の時間とデバイス上の時間が一致していることを確認してください。
   users:
     invalid_email: メールアドレスが無効です
-    invalid_otp_token: 二段階認証コードが間違っています

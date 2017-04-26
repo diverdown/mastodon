@@ -104,19 +104,19 @@ eo:
         one: "1 nova sciigo ekde via lasta vizito \U0001F418"
         other: "%{count} novaj sciigoj ekde via lasta vizito \U0001F418"
     favourite:
-      body: '%{name} favoris vian mesaĝon:'
+      body: "%{name} favoris vian mesaĝon:"
       subject: "%{name} favoris vian mesaĝon"
     follow:
       body: "%{name} eksekvis vin:"
       subject: "%{name} eksekvis vin"
     follow_request:
       body: "%{name} petis sekvi vin:"
-      subject: '%{name} petis sekvi vin'
+      subject: "%{name} petis sekvi vin"
     mention:
-      body: '%{name} menciis vin en:'
-      subject: '%{name} menciis vin'
+      body: "%{name} menciis vin en:"
+      subject: "%{name} menciis vin"
     reblog:
-      body: '%{name} diskonigis vian mesaĝon:'
+      body: "%{name} diskonigis vian mesaĝon:"
       subject: "%{name} diskonigis vian mesaĝon"
   pagination:
     next: Sekva
@@ -157,4 +157,3 @@ eo:
     instructions_html: "<strong>Skanu tiun QR-kodon per Google Authenticator aŭ per simila aplikaĵo de via poŝtelefono</strong>. De tiam, la aplikaĵo kreos nombrojn, kiujn vi devos entajpi."
   users:
     invalid_email: La retpoŝt-adreso ne estas valida
-    invalid_otp_token: La dufaktora aŭtentigila kodo ne estas valida

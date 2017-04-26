@@ -162,4 +162,3 @@ es:
     instructions_html: "<strong>Escanea este código QR desde Google Authenticator o una aplicación similar en su teléfono</strong>. Desde ahora, esta aplicación va a generar tokens que tienes que ingresar cuando quieras iniciar sesión."
   users:
     invalid_email: La dirección de correo es incorrecta
-    invalid_otp_token: Código de dos factores incorrecto
