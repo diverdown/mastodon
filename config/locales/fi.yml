@@ -157,4 +157,3 @@ fi:
     instructions_html: "<strong>Skannaa tämä QR-koodi Google Authenticator- tai vastaavaan sovellukseen puhelimellasi</strong>. Tästä hetkestä lähtien ohjelma luo koodin, mikä sinun tarvitsee syöttää sisäänkirjautuessa."
   users:
     invalid_email: Virheellinen sähköposti
-    invalid_otp_token: Virheellinen kaksivaihetunnistuskoodi

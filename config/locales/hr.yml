@@ -158,4 +158,3 @@ hr:
     instructions_html: "<strong>Skeniraj ovaj QR kod into Google Authenticator or a similiar app on your phone</strong>. Od sada, ta aplikacija će generirati tokene koje ćeš unijeti pri prijavljivanju."
   users:
     invalid_email: E-mail adresa nije valjana
-    invalid_otp_token: Nevaljani dvo-faktorski kod

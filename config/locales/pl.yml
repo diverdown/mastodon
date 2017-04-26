@@ -113,11 +113,11 @@ pl:
       body: "%{name} poprosił o możliwość śledzenia Cię"
       subject: 'Prośba o możliwość śledzenia: %{name}'
     mention:
-      body: '%{name} wspomniał Cię w:'
-      subject: '%{name} Cię wspomniał'
+      body: "%{name} wspomniał Cię w:"
+      subject: "%{name} Cię wspomniał"
     reblog:
       body: 'Twój wpis został podbity przez %{name}:'
-      subject: "Twój wpis został podbity przez %{name}"
+      subject: Twój wpis został podbity przez %{name}
   pagination:
     next: Następna
     prev: Poprzednia
@@ -157,4 +157,3 @@ pl:
     instructions_html: "<strong>Zeskanuj ten kod QR na swoim urządzeniu za pomocą Google Authenticator, FreeOTP lub podobnej aplikacji</strong>. Od teraz będzie ona generowała kody wymagane przy logowaniu."
   users:
     invalid_email: Adres e-mail jest niepoprawny
-    invalid_otp_token: Kod uwierzytelniający jest niepoprawny

@@ -147,4 +147,3 @@ zh-CN:
     instructions_html: "<strong>使用 Google Authenticator 或类似 APP 扫描二维码</strong>。现在起，APP 将会生成登陆时必须的两步验证码。"
   users:
     invalid_email: 无效的邮箱
-    invalid_otp_token: 无效的两步验证码

@@ -104,7 +104,7 @@
         one: "1 ny hendelse siden ditt siste besøk \U0001F418"
         other: "%{count} nye hendelser siden ditt siste besøk \U0001F418"
     favourite:
-      body: 'Din status ble likt av %{name}'
+      body: Din status ble likt av %{name}
       subject: "%{name} likte din status."
     follow:
       body: "%{name} følger deg!"
@@ -157,4 +157,3 @@
     instructions_html: "<strong>Scan denne QR-koden i Google Authenticator eller en lignende app på telefonen din</strong>. Fra nå av vil denne applikasjonen generere koder for deg som skal brukes under innlogging"
   users:
     invalid_email: E-postaddressen er ugyldig
-    invalid_otp_token: Ugyldig tofaktorkode

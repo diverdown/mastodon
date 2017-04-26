@@ -162,4 +162,3 @@ bg:
     instructions_html: "<strong>Сканирай този QR код с Google Authenticator или подобно приложение от своя телефон</strong>. Oтсега нататък, това приложение ще генерира код, който ще трябва да въвеждаш при всяко влизане."
   users:
     invalid_email: E-mail адресът е невалиден
-    invalid_otp_token: Невалиден код
