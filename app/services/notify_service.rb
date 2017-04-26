@@ -58,6 +58,6 @@ class NotifyService < BaseService
   end
 
   def email_enabled?
-    @recipient.user.settings.notification_emails[@notification.type]
+    @recipient.user.email.present? && @recipient.user.settings.notification_emails[@notification.type]
   end
 end

@@ -9,8 +9,13 @@ class ApplicationController < ActionController::Base
 
   include Localized
 
+  alias new_session_path user_twitter_omniauth_authorize_path
+  alias new_session_url user_twitter_omniauth_authorize_url
+
   helper_method :current_account
   helper_method :single_user_mode?
+  helper_method :new_session_path
+  helper_method :new_session_url
 
   rescue_from ActionController::RoutingError, with: :not_found
   rescue_from ActiveRecord::RecordNotFound, with: :not_found

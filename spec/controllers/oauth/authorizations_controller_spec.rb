@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Oauth::AuthorizationsController, type: :controller do
+RSpec.describe OAuth::AuthorizationsController, type: :controller do
   render_views
 
   let(:app) { Doorkeeper::Application.create!(name: 'test', redirect_uri: 'http://localhost/') }

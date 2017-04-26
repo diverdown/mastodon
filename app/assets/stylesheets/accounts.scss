@@ -387,4 +387,25 @@
     font-size: 14px;
     color: $color1;
   }
+
+}
+
+.authorized-oauth-providers {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  > li {
+    margin: 0 4px;
+    > a {
+      font-size: 28px;
+      color: $color5;
+      opacity: 0.6;
+      transition: opacity 200ms ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }

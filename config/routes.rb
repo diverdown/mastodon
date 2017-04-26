@@ -19,11 +19,9 @@ Rails.application.routes.draw do
   get '.well-known/webfinger', to: 'well_known/webfinger#show', as: :webfinger
 
   devise_for :users, path: 'auth', controllers: {
-    sessions:           'auth/sessions',
-    registrations:      'auth/registrations',
-    passwords:          'auth/passwords',
-    confirmations:      'auth/confirmations',
+    omniauth_callbacks: 'users/omniauth_callbacks',
   }
+  delete 'auth/sign_out', to: 'auth/sessions#destroy', as: :destory_user_session
 
   get '/users/:username', to: redirect('/@%{username}'), constraints: { format: :html }
 
@@ -84,7 +82,6 @@ Rails.application.routes.draw do
     end
 
     resources :accounts, only: [:index, :show] do
-      resource :reset, only: [:create]
       resource :silence, only: [:create, :destroy]
       resource :suspension, only: [:create, :destroy]
     end

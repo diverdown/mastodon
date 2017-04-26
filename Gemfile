@@ -24,7 +24,7 @@ gem 'aws-sdk', '>= 2.0'
 
 gem 'addressable'
 gem 'devise'
-gem 'devise-two-factor'
+gem 'omniauth-twitter'
 gem 'doorkeeper'
 gem 'fast_blank'
 gem 'goldfinger'

@@ -3,11 +3,13 @@
 class User < ApplicationRecord
   include Settings::Extend
 
-  devise :registerable, :recoverable,
-         :rememberable, :trackable, :validatable, :confirmable,
-         :two_factor_authenticatable, :two_factor_backupable,
-         otp_secret_encryption_key: ENV['OTP_SECRET'],
-         otp_number_of_backup_codes: 10
+  devise(
+    :trackable,
+    :omniauthable,
+    omniauth_providers: [
+      :twitter,
+    ],
+  )
 
   belongs_to :account, inverse_of: :user, required: true
   accepts_nested_attributes_for :account
@@ -19,8 +21,19 @@ class User < ApplicationRecord
   scope :admins,    -> { where(admin: true) }
   scope :confirmed, -> { where.not(confirmed_at: nil) }
 
+  def self.find_or_create_by_oauth_authorization(uid:, type:, name:, display_name:)
+    user = nil
+    ga = OAuthAuthorization.find_by(uid: uid, type: type)
+    return ga.user if ga
+    transaction do
+      user = create!(account_attributes: { username: name, display_name: display_name })
+      OAuthAuthorization.find_or_create_by!(uid: uid, type: type, name: name, account_id: user.account_id)
+    end
+    user
+  end
+
   def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+    devise_mailer.send(notification, self, *args).deliver_later if email.present?
   end
 
   def setting_default_privacy
