@@ -1,5 +1,4 @@
 @import 'variables';
-@import 'prism';
 
 .app-body{
  -webkit-overflow-scrolling: touch;
@@ -287,15 +286,6 @@
   overflow: hidden;
   white-space: pre-wrap;
 
-  pre {
-    @extend pre[class*="language-"];
-    border-width: 2px;
-    position: relative;
-    padding: 0.4em 0.8em;
-    > code {
-      font-size: 0.8em;
-    }
-  }
   .emojione {
     width: 18px;
     height: 18px;

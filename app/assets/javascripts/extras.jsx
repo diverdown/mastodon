@@ -1,5 +1,4 @@
 import emojify from './components/emoji'
-import highlight from './components/highlight'
 
 $(() => {
   $.each($('.emojify'), (_, content) => {

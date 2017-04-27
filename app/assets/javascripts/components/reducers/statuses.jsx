@@ -34,7 +34,6 @@ import {
 } from '../actions/favourites';
 import { SEARCH_FETCH_SUCCESS } from '../actions/search';
 import Immutable from 'immutable';
-import highlight from '../highlight';
 
 const normalizeStatus = (state, status) => {
   if (!status) {
@@ -48,8 +47,6 @@ const normalizeStatus = (state, status) => {
     state               = normalizeStatus(state, status.reblog);
     normalStatus.reblog = status.reblog.id;
   }
-
-  normalStatus.content = highlight(normalStatus.content);
 
   const linebreakComplemented = status.content.replace(/<br \/>/g, '\n').replace(/<\/p><p>/g, '\n\n');
   normalStatus.unescaped_content = new DOMParser().parseFromString(linebreakComplemented, 'text/html').documentElement.textContent;
