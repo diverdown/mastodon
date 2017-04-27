@@ -38,9 +38,4 @@ $(() => {
       $(e.target).parent().attr('style', null);
     }
   });
-
-  $.each($('.highlight'), (_, content) => {
-    const $content = $(content);
-    $content.html(highlight($content.html()));
-  });
 });
