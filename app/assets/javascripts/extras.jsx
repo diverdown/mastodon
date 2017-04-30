@@ -1,4 +1,5 @@
 import emojify from './components/emoji'
+import highlight from './components/highlight'
 
 $(() => {
   $.each($('.emojify'), (_, content) => {
@@ -36,5 +37,10 @@ $(() => {
       contentEl.show();
       $(e.target).parent().attr('style', null);
     }
+  });
+
+  $.each($('.highlight'), (_, content) => {
+    const $content = $(content);
+    $content.html(highlight($content.html()));
   });
 });

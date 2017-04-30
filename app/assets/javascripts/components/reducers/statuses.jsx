@@ -34,13 +34,14 @@ import {
 } from '../actions/favourites';
 import { SEARCH_FETCH_SUCCESS } from '../actions/search';
 import Immutable from 'immutable';
+import highlight from '../highlight';
 
 const normalizeStatus = (state, status) => {
   if (!status) {
     return state;
   }
 
-  const normalStatus   = { ...status };
+  const normalStatus   = { ...status, content: highlight(status.content) };
   normalStatus.account = status.account.id;
 
   if (status.reblog && status.reblog.id) {
