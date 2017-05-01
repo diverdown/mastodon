@@ -27,7 +27,10 @@ class User < ApplicationRecord
     ga = OAuthAuthorization.find_by(uid: uid, type: type)
     return ga.user if ga
     transaction do
-      user = create!(account_attributes: { username: name, display_name: display_name })
+      user = create!(
+        confirmed_at: Time.current,
+        account_attributes: { username: name, display_name: display_name }
+      )
       OAuthAuthorization.find_or_create_by!(uid: uid, type: type, name: name, account_id: user.account_id)
     end
     user
