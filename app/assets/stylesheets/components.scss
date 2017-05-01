@@ -2401,3 +2401,22 @@ button.icon-button.active i.fa-retweet {
     }
   }
 }
+
+.topics {
+  font-size: 1em;
+  padding: 10px;
+
+  &__heading {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  ul > li {
+    font-size: 1.2em;
+    margin: 0.2em;
+  }
+  a {
+    color: $color2;
+    text-decoration: none;
+  }
+}

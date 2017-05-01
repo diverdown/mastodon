@@ -35,6 +35,11 @@
       %td= best_in_place @settings['site_extended_description'], :value, as: :textarea, url: admin_setting_path(@settings['site_extended_description'])
     %tr
       %td
+        %strong Topics
+        %p 投稿欄の下に表示されるハッシュタグ。改行区切りで先頭の#は不要
+      %td= best_in_place @settings['topics'], :value, as: :textarea, url: admin_setting_path(@settings['topics'])
+    %tr
+      %td
         %strong= t('admin.settings.registrations.open.title')
       %td= best_in_place @settings['open_registrations'], :value, as: :checkbox, collection: { false: t('admin.settings.registrations.open.disabled'), true: t('admin.settings.registrations.open.enabled')}, url: admin_setting_path(@settings['open_registrations'])
     %tr

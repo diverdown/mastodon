@@ -10,6 +10,7 @@ defaults: &defaults
   site_title: 'Mastodon'
   site_description: ''
   site_rules: ''
+  topics: ''
   site_extended_description: ''
   site_contact_username: ''
   site_contact_email: ''
