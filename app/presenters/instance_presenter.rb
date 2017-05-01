@@ -7,6 +7,7 @@ class InstancePresenter
     :open_registrations,
     :site_description,
     :site_rules,
+    :topics,
     :site_extended_description,
     to: Setting
   )

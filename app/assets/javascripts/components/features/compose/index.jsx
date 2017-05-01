@@ -1,6 +1,7 @@
 import ComposeFormContainer from './containers/compose_form_container';
 import UploadFormContainer from './containers/upload_form_container';
 import NavigationContainer from './containers/navigation_container';
+import TopicsContainer from './containers/topics_container';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 import { mountCompose, unmountCompose } from '../../actions/compose';
@@ -68,6 +69,7 @@ const Compose = React.createClass({
           <div className='drawer__inner'>
             <NavigationContainer />
             <ComposeFormContainer />
+            <TopicsContainer />
           </div>
 
           <Motion defaultStyle={{ x: -100 }} style={{ x: spring(showSearch ? 0 : -100, { stiffness: 210, damping: 20 }) }}>
