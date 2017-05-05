@@ -5,7 +5,8 @@ sudo: required
 
 notifications:
   email: false
-
+  slack:
+    secure: hoeSuXe9MthQypUa0CZhm3de9ILeV7TLT3YQ7y8AT4wAI2yTKhvBMzOLGTAG43OP5DU7crhrBk3d68DFyuTersViZLdfnxZR63etb9hSDeLjmdNXCQTLc/X/OpxKCOkrY0pWTl6e8HYi+8nx1y2+2LcZ25XvUKkGQoCMns5RMpDytXdCqZj490ndvsX7flBphuKI2jKWwttCQV5JlP5+/h3bEnvzln3FlCMuxi1UgX1ote9dKIFxTiFOE4+b2YW0GhyjrZSJNllME8URp9FhMLLwhjAej2gIh6w9e1Zrz7pnfIJODPJusiWgUUHwM3kjNCHUb1+nawnUz/6UgQtSJiF7kcGtdVVDFiDG4z/WN8Oi6XjH6M/pEIj3SdocqWZhtb1v/A7QabRxNrSHAfw3HhZWvv80aZNeRyNy+occWJBYb/aHfKldeFqsKa10f1qtXrOEzK6OAbPJgWWDtqYkq/0KBEDlx5OfjvQQ1jM3hD2td7i+WY+kH6w1hWHIzlgzgNtWR81YaT65+9QaIiBV/H35UMxlf1w0U+OJ2guHZCn8QODRX9e3TXkxI4GB4X2yeF+BiNWCUPkiyspywUoY765K21kog+AItfeadgW+Yy8AkYquc56iyMRtbbRqqW+mpiR0Dv3rfwvbC5As6/fr8syKYnPMVTX+JAVSYtqtP+w=
 env:
   global:
     - LOCAL_DOMAIN=cb6e6126.ngrok.io
