@@ -378,6 +378,7 @@ ul.oauth-buttons {
   margin: 0;
   flex: 0 0 100%;
   list-style: none;
+  > li { margin: 12px 0; }
   > li > a {
     display: flex;
     align-items: center;

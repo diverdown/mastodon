@@ -1,9 +1,4 @@
-%ul.oauth-buttons
-  - OAuthAuthorization.providers.each do |provider|
-    %li
-      = link_to omniauth_authorize_path(:user, provider) do
-        = fa_icon(provider)
-        %span #{provider.capitalize}アカウントでログイン
+= render 'auth/shared/oauth_buttons'
 
 .info
   = link_to 'メールアドレスでログイン', new_user_session_path
