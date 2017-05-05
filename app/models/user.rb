@@ -30,7 +30,10 @@ class User < ApplicationRecord
     transaction do
       user = create!(
         confirmed_at: Time.current,
-        account_attributes: { username: name, display_name: display_name }
+        account_attributes: {
+          username: name.tr('-', '_').slice(0, 30),
+          display_name: display_name,
+        }
       )
       OAuthAuthorization.find_or_create_by!(uid: uid, type: type, name: name, account_id: user.account_id)
     end

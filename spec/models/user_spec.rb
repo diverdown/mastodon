@@ -1,6 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe 'self.find_or_create_by_oauth_authorization' do
+    context 'if a user tied to given account already exists' do
+      let(:user) { Fabricate.create(:user) }
+      let!(:github_account) { Fabricate.create(:github_account, user: user) }
+
+      it 'returns the user' do
+        expect(User.find_or_create_by_oauth_authorization(uid: github_account.uid, type: 'GithubAccount', name: 'test', display_name: 'test')).to eq user
+      end
+    end
+
+    context 'if there is no user tied to given account' do
+      let(:name) { 'test-test-' + 'a' * 30 }
+
+      it 'creates new user and account' do
+        expect {
+          User.find_or_create_by_oauth_authorization(uid: 1, type: 'GithubAccount', name: name, display_name: 'test')
+        }.to change { User.count }.by(1)
+      end
+
+      it 'normalize name for account username' do
+        user = User.find_or_create_by_oauth_authorization(uid: 1, type: 'GithubAccount', name: name, display_name: 'test')
+        expect(user.account.username).to eq('test_test_' + 'a' * 20)
+      end
+    end
+  end
+
   describe 'validations' do
     it 'is invalid without an account' do
       user = Fabricate.build(:user, account: nil)
