@@ -21,7 +21,10 @@ Rails.application.routes.draw do
   devise_for :users, skip: :sessions, path: 'auth', controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
   }
-  delete 'auth/sign_out', to: 'auth/sessions#destroy', as: :destroy_user_session
+  devise_scope :user do
+    delete 'auth/sign_out', to: 'auth/sessions#destroy', as: :destroy_user_session
+  end
+  match 'auth/sign_in', to: redirect('/auth/twitter'), as: :new_user_session, via: [:get, :post]
 
   get '/users/:username', to: redirect('/@%{username}'), constraints: { format: :html }
 
@@ -56,20 +59,20 @@ Rails.application.routes.draw do
       resources :mutes, only: :index, controller: :muted_accounts
     end
 
-    resource :two_factor_auth, only: [:show, :new, :create] do
-      member do
-        post :disable
-        post :recovery_codes
-      end
+    resource :two_factor_authentication, only: [:show, :create, :destroy]
+    namespace :two_factor_authentication do
+      resources :recovery_codes, only: [:create]
+      resource :confirmation, only: [:new, :create]
     end
+
+    resource :follower_domains, only: [:show, :update]
   end
 
   resources :media, only: [:show]
   resources :tags,  only: [:show]
 
   # Remote follow
-  get  :authorize_follow, to: 'authorize_follow#new'
-  post :authorize_follow, to: 'authorize_follow#create'
+  resource :authorize_follow, only: [:show, :create]
 
   namespace :admin do
     resources :pubsubhubbub, only: [:index]
@@ -82,8 +85,10 @@ Rails.application.routes.draw do
     end
 
     resources :accounts, only: [:index, :show] do
+      resource :reset, only: [:create]
       resource :silence, only: [:create, :destroy]
       resource :suspension, only: [:create, :destroy]
+      resource :confirmation, only: [:create]
     end
   end
 
@@ -102,6 +107,13 @@ Rails.application.routes.draw do
 
     # OEmbed
     get '/oembed', to: 'oembed#show', as: :oembed
+
+    # ActivityPub
+    namespace :activitypub do
+      get '/users/:id/outbox', to: 'outbox#show', as: :outbox
+      get '/statuses/:id', to: 'activities#show_status', as: :status
+      resources :notes, only: [:show]
+    end
 
     # JSON / REST API
     namespace :v1 do
@@ -145,6 +157,7 @@ Rails.application.routes.draw do
       resources :notifications, only: [:index, :show] do
         collection do
           post :clear
+          post :dismiss
         end
       end
 

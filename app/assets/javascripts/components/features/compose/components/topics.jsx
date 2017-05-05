@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react'
+import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { Link } from 'react-router';
@@ -17,7 +17,7 @@ const Topics = React.createClass({
         <div className="topics__heading">Topics</div>
         <ul>
           {topics.toSeq().map((topic) =>
-            <li><Link to={`/timelines/tag/${encodeURIComponent(topic)}`}>#{topic}</Link></li>)}
+            <li key={topic}><Link to={`/timelines/tag/${encodeURIComponent(topic)}`}>#{topic}</Link></li>)}
         </ul>
       </div>
     );

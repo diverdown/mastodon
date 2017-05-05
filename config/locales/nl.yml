@@ -143,7 +143,7 @@ nl:
       following: Volglijst
       muting: Negeerlijst
     upload: Uploaden
-  landing_strip_html: <strong>%{name}</strong> is een gebruiker op <strong>%{domain}</strong>. Je kunt deze volgen en ermee communiceren als je ergens in deze fediverse een account hebt. Als je dat niet hebt, kun je je <a href="%{sign_up_path}">hier aanmelden</a>.
+  landing_strip_html: <strong>%{name}</strong> is een gebruiker op %{link_to_root_path}. Je kunt deze volgen en ermee communiceren als je ergens in deze fediverse een account hebt. Als je dat niet hebt, kun je je <a href="%{sign_up_path}">hier aanmelden</a>.
   notification_mailer:
     digest:
       body: 'Hier is een korte samenvatting van wat je hebt gemist op %{instance} sinds jouw laatste bezoek op %{since}:'
@@ -185,23 +185,26 @@ nl:
     import: Import
     preferences: Voorkeuren
     settings: Instellingen
-    two_factor_auth: Tweestapsverificatie
+    two_factor_authentication: Tweestapsverificatie
   statuses:
     open_in_web: Openen in web
     over_character_limit: Limiet van %{max} tekens overschreden
     show_more: Toon meer
     visibilities:
-      private: Alleen aan volgers tonen
+      private: Alleen volgers
+      private_long: Alleen aan volgers tonen
       public: Openbaar
-      unlisted: Openbaar, maar niet op de openbare tijdlijn tonen
+      public_long: Aan iedereen tonen, ook op openbare tijdlijnen
+      unlisted: Minder openbaar
+      unlisted_long: Aan iedereen tonen, maar niet op openbare tijdlijnen
   stream_entries:
     click_to_show: Klik om te tonen
     reblogged: boostte
     sensitive_content: Gevoelige inhoud
   time:
     formats:
-      default: "%b %d, %J, %U:%M"
-  two_factor_auth:
+      default: "%d %B %Y om %H:%M"
+  two_factor_authentication:
     description_html: Na het instellen van <strong>tweestapsverificatie</strong>, kun jij je alleen aanmelden als je jouw mobiele telefoon bij je hebt. Hiermee genereer je namelijk de in te voeren aanmeldcode.
     disable: Uitschakelen
     enable: Inschakelen
