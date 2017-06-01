@@ -8,12 +8,12 @@
         %h2= site_hostname
 
         - unless @instance_presenter.site_description.blank?
-          %p= @instance_presenter.site_description.html_safe
+          %p!= @instance_presenter.site_description
         - unless @instance_presenter.site_rules.blank?
           %h3 参加ルール
-          %p= @instance_presenter.site_rules.html_safe
+          %p!= @instance_presenter.site_rules
         - unless @instance_presenter.site_extended_description.blank?
-          %p= @instance_presenter.site_extended_description.html_safe
+          %p!= @instance_presenter.site_extended_description
 
       .information-board
         .section
@@ -28,7 +28,6 @@
           %span= t 'about.domain_count_before'
           %strong= number_with_delimiter @instance_presenter.domain_count
           %span= t 'about.domain_count_after'
-
 
     .sidebar
       = render 'contact', contact: @instance_presenter
