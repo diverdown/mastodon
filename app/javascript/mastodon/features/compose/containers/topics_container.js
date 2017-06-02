@@ -3,7 +3,7 @@ import Topics from '../components/topics';
 
 const mapStateToProps = (state, props) => {
   return {
-    topics: state.getIn(['meta', 'topics'])
+    topics: state.getIn(['meta', 'topics']),
   };
 };
 

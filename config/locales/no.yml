@@ -256,7 +256,7 @@
       following: Følgeliste
       muting: Dempeliste
     upload: Opplastning
-  landing_strip_html: <strong>%{name}</strong> er en bruker på %{link_to_root_path}. Du kan følge dem eller kommunisere med dem hvis du har en konto hvor som helst i fediverset.
+  landing_strip_html: "<strong>%{name}</strong> er en bruker på %{link_to_root_path}. Du kan følge dem eller kommunisere med dem hvis du har en konto hvor som helst i fediverset."
   landing_strip_signup_html: Hvis du ikke har en konto så kan du <a href="%{sign_up_path}">registrere deg her</a>.
   media_attachments:
     validations:
@@ -340,4 +340,3 @@
     wrong_code: Den angitte koden var ugyldig! Stemmer instansens tid overalt med enhetens tid?
   users:
     invalid_email: E-postaddressen er ugyldig
-    invalid_otp_token: Ugyldig to-faktorkode

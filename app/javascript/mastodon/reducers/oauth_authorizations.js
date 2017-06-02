@@ -3,7 +3,7 @@ import {
 } from '../actions/accounts';
 import Immutable from 'immutable';
 
-const normalizeOAuthAuthorizations = (state, {id, oauth_authorizations}) => state.set(id, Immutable.fromJS(oauth_authorizations))
+const normalizeOAuthAuthorizations = (state, {id, oauth_authorizations}) => state.set(id, Immutable.fromJS(oauth_authorizations));
 
 const initialState = Immutable.Map();
 

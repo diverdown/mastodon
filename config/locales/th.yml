@@ -256,7 +256,7 @@ th:
       following: Following list
       muting: Muting list
     upload: Upload
-  landing_strip_html: <strong>%{name}</strong> is a user on %{link_to_root_path}. You can follow them or interact with them if you have an account anywhere in the fediverse.
+  landing_strip_html: "<strong>%{name}</strong> is a user on %{link_to_root_path}. You can follow them or interact with them if you have an account anywhere in the fediverse."
   landing_strip_signup_html: If you don't, you can <a href="%{sign_up_path}">sign up here</a>.
   media_attachments:
     validations:
@@ -340,4 +340,3 @@ th:
     wrong_code: รหัสที่กรอกไม่ถูกต้อง! Are server time and device time correct?
   users:
     invalid_email: อีเมล์ไม่ถูกต้อง
-    invalid_otp_token: two-factor code ไม่ถูกต้อง

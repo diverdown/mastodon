@@ -895,7 +895,7 @@ export function fetchOAuthAuthorizationsRequest(id) {
   return {
     type: OAUTH_AUTHORIZATIONS_FETCH_REQUEST,
     id,
-    skipLoading: true
+    skipLoading: true,
   };
 };
 
@@ -903,7 +903,7 @@ export function fetchOAuthAuthorizationsSuccess(oauth_authorizations) {
   return {
     type: OAUTH_AUTHORIZATIONS_FETCH_SUCCESS,
     oauth_authorizations,
-    skipLoading: true
+    skipLoading: true,
   };
 };
 
@@ -911,6 +911,6 @@ export function fetchOAuthAuthorizationsFail(error) {
   return {
     type: OAUTH_AUTHORIZATIONS_FETCH_FAIL,
     error,
-    skipLoading: true
+    skipLoading: true,
   };
 };
