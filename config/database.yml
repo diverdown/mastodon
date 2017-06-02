@@ -13,7 +13,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: kaudon_test
+  database: kakudon_test<%= ENV['TEST_ENV_NUMBER'] %>
 
 production:
   <<: *default
